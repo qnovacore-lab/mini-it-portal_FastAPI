@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini IT Destek Portalı</title>
+</head>
+<body>
+    <h1>{{ baslik }}</h1>
+    <p>Hoş geldin, {{ kullanici }}!</p>
+    <p>{{ mesaj }}</p>
+
+    <hr>
+
+    <h2>IT Destek Talebi Oluştur</h2>
+
+    <form action="/portal" method="post">
+        <label for="baslik">Talep başlığı:</label>
+        <input type="text" id="baslik" name="talep_basligi" 
+        value="{{ talep_basligi }}" required>  <!-- Python'dan gönderdiğimiz verileri HTML formuna bağlayacağız.-->
+
+        <br><br>
+
+        <label for="aciklama">Açıklama:</label>
+        <textarea id="aciklama" name="aciklama" required></textarea>
+
+        <br><br>
+
+        <button type="submit">Talebi Gönder</button>
+    </form>
+</body>
+</html>
